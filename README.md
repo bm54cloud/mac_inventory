@@ -11,6 +11,6 @@ A Python script for auditing your Mac's installed tools and applications — use
 - VS Code/Cursor extensions
 
 # Usage:
-`bashpython3 mac_inventory.py | tee mac_inventory_report.txt`
+`python3 mac_inventory.py | tee mac_inventory_report.txt`
 
 Requires Python 3 and macOS. No external dependencies.
