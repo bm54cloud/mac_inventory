@@ -1,5 +1,5 @@
 # mac-inventory
-A Python script for auditing your Mac's installed tools and applications — useful when migrating to a new machine or documenting your development environment.
+A Python script for auditing your Mac's installed tools and applications and writing them to a .txt file. Reference the file when migrating to a new machine so you can remember what you previously had configured.
 
 # What it inventories:
 
