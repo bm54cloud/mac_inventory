@@ -250,7 +250,6 @@ def main():
     # ── CLI Tools ──────────────────────────────────────────────────────────────
     section("CLI TOOLS & RUNTIMES")
     found_tools = []
-    missing_tools = []
 
     for name, vcmd in CLI_TOOLS:
         found, version = check_tool(name, vcmd)
@@ -260,8 +259,6 @@ def main():
             # Special case: nvm lives in ~/.nvm, not on PATH
             if name == "nvm" and Path.home().joinpath(".nvm").exists():
                 found_tools.append(("nvm", "found (~/.nvm exists)"))
-            else:
-                missing_tools.append(name)
 
     print(f"\n✅ Installed ({len(found_tools)}):\n")
     for name, version in sorted(found_tools):

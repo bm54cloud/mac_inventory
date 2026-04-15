@@ -1,1 +1,16 @@
-# mac_inventory
+# mac-inventory
+A Python script for auditing your Mac's installed tools and applications — useful when migrating to a new machine or documenting your development environment.
+
+# What it inventories:
+
+- 120+ CLI tools and runtimes (with versions)
+- Homebrew formulae, casks, and taps
+- Installed applications in /Applications
+- Shell config files (.zshrc, .gitconfig, .ssh/config, etc.)
+- npm global packages
+- VS Code/Cursor extensions
+
+# Usage:
+`bashpython3 mac_inventory.py | tee mac_inventory_report.txt`
+
+Requires Python 3 and macOS. No external dependencies.
