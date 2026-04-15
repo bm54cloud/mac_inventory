@@ -314,28 +314,10 @@ def main():
                 print(f"  {app}")
 
     # ── Shell config files ─────────────────────────────────────────────────────
-    section("SHELL CONFIG FILES (existence check)")
-    config_files = [
-        "~/.zshrc", "~/.zprofile", "~/.zshenv",
-        "~/.bashrc", "~/.bash_profile", "~/.bash_aliases",
-        "~/.profile",
-        "~/.config/fish/config.fish",
-        "~/.tmux.conf", "~/.config/tmux/tmux.conf",
-        "~/.vimrc", "~/.config/nvim/init.vim", "~/.config/nvim/init.lua",
-        "~/.gitconfig", "~/.gitignore_global",
-        "~/.ssh/config",
-        "~/.gnupg/gpg.conf",
-        "~/.config/starship.toml",
-        "~/.tool-versions",
-        "~/.mise.toml",
-        "~/.Brewfile",
-    ]
-    print()
-    for f in config_files:
-        p = Path(f).expanduser()
-        exists = "✅" if p.exists() else "  "
-        size = f"  ({p.stat().st_size} bytes)" if p.exists() else ""
-        print(f"  {exists}  {f}{size}")
+    section("HOME DIRECTORY FILES")
+    home_listing = run("ls -A ~", shell=True)
+    if home_listing:
+        print(f"\n{home_listing}")
 
     # ── Python pip packages ────────────────────────────────────────────────────
     if shutil.which("pip3"):
